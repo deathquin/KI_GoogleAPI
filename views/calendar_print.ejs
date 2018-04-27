@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+
+        //$("#tableSubject").prepend("<th>aa</th>");
+
+        var data = <%-printList%>
+        var result = JSON.parse(data)
+
+        dailyPrint(result);
+
+        $('#printTable').each(function() {
+            var table = this;
+            $.each([1] /* 합칠 칸 번호 */, function(c, v) {
+                var tds = $('>tbody>tr>td:nth-child(' + v + ')', table).toArray();
+                var i = 0, j = 0;
+                for(j = 1; j < tds.length; j ++) {
+                    if(tds[i].innerHTML != tds[j].innerHTML) {
+                        $(tds[i]).attr('rowspan', j - i);
+                        i = j;
+                        continue;
+                    }
+                    $(tds[j]).hide();
+                }
+                j --;
+                if(tds[i].innerHTML == tds[j].innerHTML) {
+                    $(tds[i]).attr('rowspan', j - i + 1);
+                }
+            });
+        });
+
+    });
+
+
+</script>
+<body>
+
+<table style="width:100%;" id="printTable" border="1">
+    <tr id="tableSubject">
+        <th>날짜</th>
+        <th>시간</th>
+        <th>선거명</th>
+        <th>공개여부</th>
+        <th>참석여부</th>
+        <th>행사이름</th>
+        <th>지역</th>
+        <th>해당자</th>
+        <th>하실일</th>
+        <th>협업</th>
+        <th>설명</th>
+        <th>등록자</th>
+    </tr>
+</table>
+
+<script>
+    function dailyPrint(result){
+
+        for(var i in result) {
+
+            const electionName = result[i].electionName;
+            const visibility = result[i].visibility;
+            const attend = result[i].attend;
+            const eventName = result[i].eventName;
+            const location = result[i].location  ;
+            const applicant = result[i].applicant ;
+            const work = result[i].work ;
+            const cooperation = result[i].eventName;
+            const description = result[i].description ;
+            const register = result[i].register;
+
+            const startDate = result[i].startDate.split(" ");
+            const endDate = result[i].endDate.split(" ");
+
+            const timeStr = startDate[1] + " - " + endDate[1];
+            const day = startDate[0];
+
+            $('#printTable > tbody:last').append('<tr>\n' +
+                '        <td align="center">'+day+'</td>\n' +
+                '        <td align="center">'+timeStr+'</td>\n' +
+                '        <td align="center">'+electionName+'</td>\n' +
+                '        <td align="center">'+visibility+'</td>\n' +
+                '        <td align="center">'+attend+'</td>\n' +
+                '        <td align="center">'+eventName+'</td>\n' +
+                '        <td align="center">'+location+'</td>\n' +
+                '        <td align="center">'+applicant+'</td>\n' +
+                '        <td align="center">'+work+'</td>\n' +
+                '        <td align="center">'+cooperation+'</td>\n' +
+                '        <td align="center">'+description+'</td>\n' +
+                '        <td align="center">'+register+'</td>\n' +
+                '    </tr>');
+        }
+
+    }
+</script>
+
+
+
+
+</body>
+</html>

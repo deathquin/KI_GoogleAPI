@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex,follow" />
+
+    <title>A Bootstrap horizontal form example</title>
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrapValidator.css"/>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-datetimepicker.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap-datetimepicker.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <h1>캘린더 형식</h1>
+    <form class="form-horizontal" role="form" id="register" method="post" action="/calendar">
+        <div class="form-group">
+            <label for="gender1" class="col-sm-2 control-label">선거명</label>
+            <div class="col-sm-2">
+                <select class="form-control" id="gender14" name="electionName">
+                    <option value="">선택</option>
+                    <option value="지방선거">지방선거</option>
+                    <option value="총선">총선</option>
+                    <option value="대선">대선</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="gender1" class="col-sm-2 control-label">공개여부</label>
+            <div class="col-sm-2">
+                <select class="form-control" id="gender12" name="visibility">
+                    <option value="">선택</option>
+                    <option value="공개">공개</option>
+                    <option value="비공개">비공개</option>
+                    <option value="기타">기타</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="gender1" class="col-sm-2 control-label">참석여부</label>
+            <div class="col-sm-2">
+                <select class="form-control" id="gender13" name="attend">
+                    <option value="">선택</option>
+                    <option value="참석">참석</option>
+                    <option value="불참석">불참석</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">행사명</label>
+            <div class="col-sm-5">
+                <input type="email" class="form-control" id="eventName" placeholder="행상명을 입력해주세요." name="eventName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email1" class="col-sm-2 control-label">지역</label>
+            <div class="col-sm-2">
+                <select class="form-control" id="location" name="location">
+                    <option value="">선택</option>
+                    <option value="거제시">거제시</option>
+                    <option value="거창군">거창군</option>
+                    <option value="고성군">고성군</option>
+                    <option value="김해시">김해시</option>
+                    <option value="남해군">남해군</option>
+                    <option value="마산시">마산시</option>
+                    <option value="밀양시">밀양시</option>
+                    <option value="사천시">사천시</option>
+                    <option value="산청군">산청군</option>
+                    <option value="양산시">양산시</option>
+                    <option value="의령군">의령군</option>
+                    <option value="진주시">진주시</option>
+                    <option value="진해시">진해시</option>
+                    <option value="창녕군">창녕군</option>
+                    <option value="창원시">창원시</option>
+                    <option value="통영시">통영시</option>
+                    <option value="하동군">하동군</option>
+                    <option value="함안군">함안군</option>
+                    <option value="함양군">함양군</option>
+                    <option value="합천군">합천군</option>
+                    <option value="etc">기타</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email1" class="col-sm-2 control-label">해당자</label>
+            <div class="col-sm-2">
+                <select class="form-control" id="applicant" name="applicant">
+                    <option value="">선택</option>
+                    <option value="후보자">후보자</option>
+                    <option value="배우자">배우자</option>
+                    <option value="가족">가족</option>
+                    <option value="선대위원장">선대위원장</option>
+                    <option value="유세팀">유세팀</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email1" class="col-sm-2 control-label">하실일</label>
+            <div class="col-sm-2">
+                <select class="form-control" id="work" name="work">
+                    <option value="">선택</option>
+                    <option value="축사">축사</option>
+                    <option value="간담회">간담회</option>
+                    <option value="차담">차담</option>
+                    <option value="식사">식사</option>
+                    <option value="예방">예방</option>
+                    <option value="참배">참배</option>
+                    <option value="인터뷰">인터뷰</option>
+                    <option value="유세">유세</option>
+                    <option value="특강">특강</option>
+                    <option value="토론회">토론회</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email1" class="col-sm-2 control-label">협업</label>
+            <div class="col-sm-2">
+                <select class="form-control" id="cooperation" name="cooperation">
+                    <option value="">선택</option>
+                    <option value="메시지">메시지</option>
+                    <option value="정책">정책</option>
+                    <option value="홍보">홍보</option>
+                    <option value="공보">공보</option>
+                    <option value="조직">조직</option>
+                    <option value="지역">지역</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="DatePicker" class="col-sm-2 control-label">시작 시간</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="startDate" name="startDate" placeholder="시작시간">
+            </div>
+            <label for="DatePicker" class="col-sm-1 control-label">종료 시간</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="endDate" name="endDate" placeholder="종료시간">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">설명</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="description" placeholder="설명을 입력해주세요." name="description">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">등록자</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="register" placeholder="등록자를 입력해주세요." name="register">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">등록</button>
+            </div>
+        </div>
+    </form>
+</div><br /><br />
+<script>
+    $(document).ready(function() {
+
+        $("#startDate, #endDate").datetimepicker({
+            format: 'yyyy-mm-dd hh:ii',
+            autoClose: true
+        });
+
+        $('#register').bootstrapValidator({
+            message: 'This value is not valid',
+            fields: {
+                description: {
+                    message: 'The username is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: '설명을 입력해주세요.'
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 30,
+                            message: '다섯글자 이상 입력해주세요.'
+                        },
+                    }
+                },
+                electionName: {
+                    validators: {
+                        notEmpty: {
+                            message: '선거명을 선택해주세요.'
+                        }
+                    }
+                },
+                visibility: {
+                    validators: {
+                        notEmpty: {
+                            message: '공개여부를 설정해주세요.'
+                        }
+                    }
+                },
+                attend: {
+                    validators: {
+                        notEmpty: {
+                            message: '참석여부를 설정해주세요.'
+                        }
+                    }
+                },
+                eventName: {
+                    validators: {
+                        notEmpty: {
+                            message: '행사명을 입력해주세요.'
+                        }
+                    }
+                },
+                location: {
+                    validators: {
+                        notEmpty: {
+                            message: '지역을 입력해주세요.'
+                        }
+                    }
+                },
+                applicant: {
+                    validators: {
+                        notEmpty: {
+                            message: '해당자를 선택해주세요.'
+                        }
+                    }
+                },
+                work: {
+                    validators: {
+                        notEmpty: {
+                            message: '하실일을 선택해주세요.'
+                        }
+                    }
+                },
+                cooperation: {
+                    validators: {
+                        notEmpty: {
+                            message: '협력 메세지를 선택해주세요.'
+                        }
+                    }
+                },
+                startDate: {
+                    validators: {
+                        notEmpty: {
+                            message: '시작 시간, 종료 시간을 입력해주세요.'
+                        }
+                    }
+                },
+                endDate: {
+                    validators: {
+                        notEmpty: {
+                            message: '시작 시간, 종료 시간을 입력해주세요.'
+                        }
+                    }
+                },
+                register: {
+                    validators: {
+                        notEmpty: {
+                            message: '등록자를 입력해주세요.'
+                        }
+                    }
+                },
+
+            }
+        });
+    });
+</script>
+</body>
+</html>

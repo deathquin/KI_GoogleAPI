@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrapValidator.css"/>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-datetimepicker.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap-datetimepicker.js"></script>
+
+    <style>
+        body {
+            background: #eee !important;
+        }
+
+        .wrapper {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .form-signin {
+            max-width: 380px;
+            padding: 15px 35px 45px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .form-signin-heading,
+        .checkbox {
+            margin-bottom: 30px;
+        }
+
+        .checkbox {
+            font-weight: normal;
+        }
+
+        .form-control {
+            position: relative;
+            font-size: 16px;
+            height: auto;
+            padding: 10px;
+        }
+
+        input[type="text"] {
+            margin-bottom: -1px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        input[type="password"] {
+            margin-bottom: 20px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="wrapper">
+    <form class="form-signin" id="register" method="post" action="/calendar/list">
+        <h2 class="form-signin-heading">캘린더</h2>
+        <div class="form-group">
+            <select class="form-control" id="calendarList" name="calendarList">
+                <option value="">선택</option>
+            </select>
+        </div>
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">확인</button>
+    </form>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+
+        $('#register').bootstrapValidator({
+            message: 'This value is not valid',
+            fields: {
+                calendarList: {
+                    validators: {
+                        notEmpty: {
+                            message: '선거명을 선택해주세요.'
+                        }
+                    }
+                },
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/calendar/list",
+            cache: false,
+            success: function(data){
+
+                for(var i=0; i<data.length; i++) {
+                    console.log(data[i]);
+
+                    if(data[i].accessRole == "reader") {
+                        continue;
+                    }
+
+                    $("#calendarList").append('<option value='+data[i].id+'>'+data[i].summary+'</option>')
+                }
+
+            },
+            error : function(err) {
+                alert(JSON.stringify(err.message));
+            }
+        });
+
+
+    });
+
+
+</script>
+
+</body>
+</html>
