@@ -4,7 +4,6 @@ const googelConfig = require("../config/googleAPI").config;
 const google = require('googleapis').google;
 const OAuth2Client = google.auth.OAuth2;
 const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly','https://www.googleapis.com/auth/calendar'];
-const calender = require('../model/Calendar').calendar;
 const session = require('../model/session').session;
 
 //Global object

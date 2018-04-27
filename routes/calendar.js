@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const calender = require('../model/Calendar').calendar;
+const calender = require('../model/calendar').calendar;
 const session = require("../model/session").session;
 const ensureAuthenticated = require("../helpers/certification").ensureAuthenticated;
 
@@ -191,8 +191,8 @@ router.post("/excel", function(req, res){
 
     for(var i in data) {
 
-        console.log(i);
-        console.log(data[i]);
+        //console.log(i);
+        //console.log(data[i]);
         const jsonData = data[i];
 
         const electionName = jsonData.electionName;
