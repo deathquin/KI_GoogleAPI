@@ -762,7 +762,7 @@
                         const title = json.summary;
                         const location = json.location;
                         const desc = json.description;
-                        const register = json.creator.displayName;
+
 
                         const id = json.id;
 
@@ -772,6 +772,7 @@
                         //console.log(JSON.stringify(json));
 
                         const extension = json.extendedProperties.private;
+                        const register = extension.register;
 
                         var boxVisible = true;
 
@@ -790,7 +791,7 @@
                                 "               <div class=\"box\">" +
                                 "                   <div class=\"caption\">" +
                                 "                        <input type='hidden'value='"+id+"' class='uid'>" +
-                                "                        <h4 class=\"group inner list-group-item-heading\">"+title+"</h4>" +
+                                "                        <h4 class='group inner list-group-item-heading' style='text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 150px;'>"+title+"</h4>" +
                                 "                        <p class=\"group inner list-group-item-text\">"+desc+"</p>" +
                                 "                        <p class=\"group inner list-group-item-text\">"+location+"</p>" +
                                 "                        <p class=\"group inner list-group-item-text\">"+register+"</p>" +
