@@ -187,9 +187,22 @@ router.post("/excel", function(req, res){
 
     const data = JSON.parse(req.body.printData);
 
-    var count = 2;
+    console.log(data.length);
 
+    var count = 2;
+    var otherDate = null;
+    var otherCount = 1;
+
+    var ccc = 0;
+    for(var co in data) {
+        ++ccc;
+    }
+
+    var dataCount = 0;
+    var writeCount = 2;
     for(var i in data) {
+
+        ++dataCount;
 
         //console.log(i);
         //console.log(data[i]);
@@ -214,7 +227,29 @@ router.post("/excel", function(req, res){
         const timeStr = startDate1[1] + " - " + endDate1[1];
         const day = startDate1[0];
 
-        ws.cell(count,1).string(day).style(style);
+        if(count == 2) {
+            otherDate = day;
+        }
+
+        if(otherDate == day) {
+            ++otherCount;
+            /*if(ccc == dataCount) {
+                ws.cell(writeCount, 1, otherCount, 1, true).string(otherDate);
+            }*/
+        } else {
+            ws.cell(writeCount, 1, otherCount, 1, true).string(otherDate);
+            writeCount = otherCount;
+            ++writeCount;
+            ++otherCount;
+            otherDate = day;
+            //ws.cell(count,1).string(day).style(style);
+        }
+
+        if(ccc == dataCount) {
+            ws.cell(writeCount, 1, otherCount, 1, true).string(otherDate);
+        }
+
+
         ws.cell(count,2).string(timeStr).style(style);
         ws.cell(count,3).string(electionName).style(style);
         ws.cell(count,4).string(visibility).style(style);
@@ -231,6 +266,8 @@ router.post("/excel", function(req, res){
 
         ++count;
     }
+
+    //ws.cell(15, 1, 15, 6, true).string('One big merged cell');
 
     const dateFormat = require('dateformat');
     const day = dateFormat(new Date(), "yyyy-mm-dd h:MM:ss");
