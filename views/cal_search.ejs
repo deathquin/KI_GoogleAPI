@@ -22,45 +22,25 @@
             border-radius: 0px;
         }
 
-        .item.list-group-item {
-            float: none;
-            width: 100%;
-            background-color: #fff;
-            margin-bottom: 10px;
-        }
-        .item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover {
-            background: #428bca;
-        }
-
-        .item.list-group-item .list-group-image {
-            margin-right: 10px;
-        }
         .item.list-group-item .thumbnail {
             margin-bottom: 0px;
         }
-        .item.list-group-item .caption {
-            padding: 9px 9px 0px 9px;
-        }
-        .item.list-group-item:nth-of-type(odd) {
-            background: #eeeeee;
-        }
 
-        .item.list-group-item:before, .item.list-group-item:after {
-            display: table;
-            content: " ";
-        }
         .item.list-group-item img {
             float: left;
         }
-        .item.list-group-item:after {
-            clear: both;
-        }
+
         .list-group-item-text {
             margin: 0 0 11px;
         }
+
+        .list-group-item {
+            height: 75%;
+        }
+
         .box {
             width: 100%;
-            height: 130px;
+            height: 140px;
             background-color: #ffffff;
         }
         .box1 {
@@ -197,159 +177,135 @@
             </div>
         </form>
     </div>
-    <div id="products" class="row list-group">
 
-        <!--<div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="list-group" id="listGroup">
 
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
+      <!--  <div class="list-group-item" style="border: 0 none;">
+
+            &lt;!&ndash; Start &ndash;&gt;
+            <div>asd</div>
+            <div id="products" class="row list-group">
+
+                <div class="item  col-xs-4 col-lg-2">
+                    <div class="thumbnail">
+                        <div class="box">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
-        </div>
+            &lt;!&ndash; End &ndash;&gt;
+        </div>-->
 
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
+        <!--<div class="list-group-item" style="border: 0 none;">
+            <div id="products" class="row list-group">
+
+                <div class="item  col-xs-4 col-lg-2">
+                    <div class="thumbnail">
+                        <div class="box">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item  col-xs-4 col-lg-2">
+                    <div class="thumbnail">
+                        <div class="box">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item  col-xs-4 col-lg-2">
+                    <div class="thumbnail">
+                        <div class="box">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
-
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
+                <div class="item  col-xs-4 col-lg-2">
+                    <div class="thumbnail">
+                        <div class="box">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
-
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
+                <div class="item  col-xs-4 col-lg-2">
+                    <div class="thumbnail">
+                        <div class="box">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
 
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
+                <div class="item  col-xs-4 col-lg-2">
+                    <div class="thumbnail">
+                        <div class="box">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
+
+                <div class="item  col-xs-4 col-lg-2">
+                    <div class="thumbnail">
+                        <div class="box">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
-                    </div>
-                </div>
 
             </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
-                    </div>
-                </div>
+        </div>-->
 
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-2">
-            <div class="thumbnail">
-                <div class="box">
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
--->
 
     </div>
+
+
 </div>
 
 <!-- print Input data -->
@@ -755,6 +711,8 @@
                 cache: false,
                 success: function(data){
 
+                    var otherDate = "";
+
                     for(var i=0; i<data.length; i++) {
                         //console.log(data[i]);
                         const json = data[i];
@@ -785,15 +743,30 @@
                         }
 
                         if(boxVisible) {
-                            $("#products").append(
-                                "<div class='item  col-xs-4 col-lg-2' id='"+id+"'>" +
+
+                            const split = extension.startDate.split(" ");
+                            const endSplit = extension.endDate.split(" ");
+                            //console.log(otherDate[0] + " : " + split[0]);
+                            if(otherDate != split[0]) {
+                                console.log("wrong");
+                                $("#listGroup").append('<div class="list-group-item" style="border: 0 none;">' +
+                                    '<div><h3>'+split[0]+'</h3></div><div id="'+split[0]+'" class="row list-group"></div></div>')
+
+                                otherDate = split[0];
+
+                            }
+
+                            $("#"+split[0]+"").append(
+                                "<div class='item  col-xs-3 col-lg-2' id='"+id+"' >" +
                                 "           <div class='thumbnail' style='outline: none'>" +
                                 "               <div class=\"box\">" +
                                 "                   <div class=\"caption\">" +
                                 "                        <input type='hidden'value='"+id+"' class='uid'>" +
                                 "                        <h4 class='group inner list-group-item-heading' style='text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 150px;'>"+title+"</h4>" +
-                                "                        <p class=\"group inner list-group-item-text\">"+desc+"</p>" +
-                                "                        <p class=\"group inner list-group-item-text\">"+location+"</p>" +
+                                "                        <p class='group inner list-group-item-text' style='text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 150px;'>"+desc+"</p>" +
+                                "                        "+location+"<br/>" +
+                                "                        시작시간:"+split[1]+"<br/>" +
+                                "                        종료시간:"+endSplit[1]+"<br/>" +
                                 "                        <p class=\"group inner list-group-item-text\">"+register+"</p>" +
                                 "                   </div>" +
                                 "               </div>" +
